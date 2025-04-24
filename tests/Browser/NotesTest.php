@@ -20,10 +20,13 @@ class NotesTest extends DuskTestCase
             ->press('LOG IN')
             ->pause(2000)
             ->assertPathIs('/dashboard')
-            ->clinkLink('Notes')
+            ->clickLink('Notes')
             ->assertPathIs('/notes')
-            ->pressButton('Create Note')
+            ->clickLink('Create Note')
             ->assertPathIs('/create-note')
+            ->type('title','New Notes')
+            ->type('description','Testing new notes')
+            ->press('CREATE')
             
             ;
         });
